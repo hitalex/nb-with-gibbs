@@ -1,0 +1,9 @@
+Total number of training documents:1370
+Number of training documents in category "course":620
+Number of training documents in category "faculty":750
+
+Total number of test documents:684
+Number of test documents in category "course":310
+Number of test documents in category "faculty":374
+Size of vocabulary: 7296
+

@@ -30,6 +30,8 @@ and it becomes much simpler when you have word in string form, like "mini"
 """
 vocabulary = dict({"a":[0,0]}) # vocabulary for the whole dataset
 class_map = dict({"course":0, "faculty":1})
+logger = open("logger", "w")
+output_file = logger # or output_file = sys.stdout
 
 # Add words in vocabulary
 def add_in_dict(line):
@@ -82,10 +84,12 @@ def load_data(datafile):
         line = line.split(" "); # tokenize the document
         del line[-1] # delete the \n
         #print "Line[0]:" + line[0]
+        """
         if line[0] == "project":
             line[0] = "course"
         if line[0] == "student":
             line[0] = "faculty"
+        """
         if line[0] == "course" or line[0] == "faculty":
             cindex = class_map[line[0]]
             docnum[cindex] = docnum[cindex] + 1
@@ -168,7 +172,7 @@ Evaluate the clustering result
 @docnum number of docs in every class
 methods to be used: purity, NML, RI, F-value
 """
-def evaluate_result(labels, docset, N, docnum):
+def evaluate_cluster_result(labels, docset, N, docnum):
     print "Clustering evaluation result:"
     for i in range(N):
         doc = docset[i]
@@ -193,34 +197,64 @@ def evaluate_result(labels, docset, N, docnum):
     
     purity = sum_count * 1.0 / N
     print "Purity: " + str(purity)
-    
+
+"""
+Evaluate classification result
+"""
+def evaluate_classification(labels, tdocset, N):
+    testN = len(tdocset)
+    trainN = N - testN
+    correct = 0 # number of correctly classified
+    for i in range(testN):
+        category = tdocset[i][0]
+        if category == "course" or category == "faculty":
+            if labels[i+trainN] == class_map[category]:
+                correct = correct + 1
+    accuracy = correct * 1.0 / testN
+    output_file.write("Classification accuracy: " + str(accuracy) + "\n")
     
 # main loop    
 def main(argv):
 #    print "File to open: " + argv[1]
-    print "Usage: python ./NB-with-Gibbs.py data_file max_iters"
-    print "Loading data..."
+    print "Usage: python ./NB-with-Gibbs.py data_file test_file max_iters"
+    print "Loading training data..."
     (docset, docindexset, docnum) = load_data(argv[1])
     
     # initializations for parameters
-    T = int(argv[2]) # max iterations
-    N = len(docset) # number of documents
+    T = int(argv[3]) # max iterations
+    trainN = len(docset) # number of documents
+    print "Loading training data done."
+    print "Total number of training documents:" + str(trainN)
+    print "Number of training documents in category \"course\":" + str(docnum[class_map["course"]])
+    print "Number of training documents in category \"faculty\":" + str(docnum[class_map["faculty"]])
+    
+    print "Loading test data..."
+    (tdocset, tdocindexset, tdocnum) = load_data(argv[2])
+    print "Loading test data done."
+    testN = len(tdocset)
+    print "Total number of test documents:" + str(testN)
+    print "Number of test documents in category \"course\":" + str(tdocnum[class_map["course"]])
+    print "Number of test documents in category \"faculty\":" + str(tdocnum[class_map["faculty"]])
     V = len(vocabulary) # size of the vocabulary
-    print "Loading data done."
-    print "Total number of documents:" + str(N)
-    print "Number of document in category \"course\":" + str(docnum[class_map["course"]])
-    print "Number of document in category \"faculty\":" + str(docnum[class_map["faculty"]])
     print "Size of vocabulary: " + str(V)
     
     #randomly set labels for documents
+    N = trainN + testN
     labels = [0] * N # labes for all documents, 0 or 1
     class_count = [0, 0] # number of documents in each class
-    for i in range(N):
-        labels[i] = random.randint(0, 1)
-        class_count[labels[i]] = class_count[labels[i]] + 1
+    for i in range(trainN): # assign labels for training doccument
+        category = docset[i][0]
+        labels[i] = class_map[category]
+    for i in range(testN): # randomly assign test document with labels 0 or 1
+        label = random.randint(0, 1)
+        labels[i + trainN] = label
+        class_count[label] = class_count[label] + 1
         
     # count word in each class
     word_count = [[0]*V, [0]*V]
+    # extend training document list with test document
+    docset.extend(tdocset)
+    docindexset.extend(tdocindexset)
     count_word(docindexset, labels, word_count)
     
     hyper_gamma = (2, 2) # parameter for Beta distribution
@@ -231,10 +265,11 @@ def main(argv):
     theta = [theta0, theta1]
     
     B = T / 3; # B is for burn-in iterations
-    class_vote = [0] * N # collect vote for every iteration
+    class_vote = [0] * testN # collect vote for every iteration
     print "Start to iterate..."
     for i in range(T):
-        for j in range(N):
+        change_count = 0
+        for j in range(trainN, N): # skip training documents
             label = labels[j]
             assert(label == 0 or label == 1)
             class_count[label] = class_count[label] - 1
@@ -253,27 +288,35 @@ def main(argv):
             new_label = (0, 1)[index]
             
             labels[j] = new_label
+            if label != new_label:
+                change_count = change_count + 1
             class_count[new_label] = class_count[new_label] + 1
             update_word_count(docindexset[j], new_label, +1, word_count) # update word count by adding the docuemnt j
         
         update_theta(docindexset, labels, theta, hyper_multi, word_count)
         if(i >= B): # start to record data
-            for k in range(N):
-                class_vote[k] = class_vote[k] + labels[k] # record all 1s by adding every label, a bit hacking here
-        print "iteration #" + str(i) + ":"
-        print "Labels:"; print labels
+            for k in range(testN):
+                class_vote[k] = class_vote[k] + labels[trainN + k] # record all 1s by adding every label, a bit hacking here
+        output_file.write("iteration #" + str(i) + ":\n")
+        output_file.write("Number of changes:" + str(change_count) + "\n")
+        print "iterationo #:" + str(i)
+        #print "Labels:"; print labels
+        # evaluate in every iteration
+        evaluate_classification(labels, tdocset, N)
     
     # determin labels for each document
-    for k in range(N):
+    for k in range(testN):
         if class_vote[k] >= T - B - class_vote[k]:
             labels[k] = 1
         else:
             labels[k] = 0
                 
     print "Iteration done."
-    print "Results - Labels of each document:"
-    print labels
-    evaluate_result(labels, docset, N, docnum)
+    output_file.write("Results - Labels of testing document:\n")
+    output_file.write(tuple(labels[trainN: N]))
+    #evaluate_cluster_result(labels, docset, N, docnum)
+    evaluate_classification(labels, tdocset, N)
+    output_file.close()
     
 if __name__ == "__main__":
     main(sys.argv)
