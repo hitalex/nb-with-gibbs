@@ -1,301 +1,301 @@
 iteration #0:
-Number of changes:357
-Classification accuracy: 0.49269005848
+Number of changes:11
+Classification accuracy: 0.388888888889
 iteration #1:
-Number of changes:302
-Classification accuracy: 0.755847953216
+Number of changes:2
+Classification accuracy: 0.388888888889
 iteration #2:
-Number of changes:111
-Classification accuracy: 0.868421052632
+Number of changes:3
+Classification accuracy: 0.555555555556
 iteration #3:
-Number of changes:42
-Classification accuracy: 0.883040935673
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #4:
-Number of changes:22
-Classification accuracy: 0.900584795322
+Number of changes:1
+Classification accuracy: 0.555555555556
 iteration #5:
-Number of changes:21
-Classification accuracy: 0.899122807018
+Number of changes:0
+Classification accuracy: 0.555555555556
 iteration #6:
-Number of changes:23
-Classification accuracy: 0.909356725146
+Number of changes:1
+Classification accuracy: 0.5
 iteration #7:
-Number of changes:17
-Classification accuracy: 0.893274853801
+Number of changes:1
+Classification accuracy: 0.555555555556
 iteration #8:
-Number of changes:15
-Classification accuracy: 0.894736842105
+Number of changes:1
+Classification accuracy: 0.5
 iteration #9:
-Number of changes:16
-Classification accuracy: 0.897660818713
+Number of changes:0
+Classification accuracy: 0.5
 iteration #10:
-Number of changes:11
-Classification accuracy: 0.899122807018
+Number of changes:0
+Classification accuracy: 0.5
 iteration #11:
-Number of changes:11
-Classification accuracy: 0.894736842105
+Number of changes:1
+Classification accuracy: 0.555555555556
 iteration #12:
-Number of changes:15
-Classification accuracy: 0.902046783626
+Number of changes:1
+Classification accuracy: 0.5
 iteration #13:
-Number of changes:22
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.5
 iteration #14:
-Number of changes:19
-Classification accuracy: 0.900584795322
+Number of changes:1
+Classification accuracy: 0.555555555556
 iteration #15:
-Number of changes:13
-Classification accuracy: 0.899122807018
+Number of changes:1
+Classification accuracy: 0.5
 iteration #16:
-Number of changes:15
-Classification accuracy: 0.909356725146
+Number of changes:0
+Classification accuracy: 0.5
 iteration #17:
-Number of changes:18
-Classification accuracy: 0.900584795322
+Number of changes:1
+Classification accuracy: 0.555555555556
 iteration #18:
-Number of changes:15
-Classification accuracy: 0.896198830409
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #19:
-Number of changes:17
-Classification accuracy: 0.894736842105
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #20:
-Number of changes:22
-Classification accuracy: 0.90350877193
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #21:
-Number of changes:18
-Classification accuracy: 0.906432748538
+Number of changes:1
+Classification accuracy: 0.555555555556
 iteration #22:
-Number of changes:20
-Classification accuracy: 0.90350877193
+Number of changes:0
+Classification accuracy: 0.555555555556
 iteration #23:
-Number of changes:14
-Classification accuracy: 0.906432748538
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #24:
-Number of changes:18
-Classification accuracy: 0.900584795322
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #25:
-Number of changes:15
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #26:
-Number of changes:14
-Classification accuracy: 0.907894736842
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #27:
-Number of changes:19
-Classification accuracy: 0.894736842105
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #28:
-Number of changes:18
-Classification accuracy: 0.90350877193
+Number of changes:1
+Classification accuracy: 0.555555555556
 iteration #29:
-Number of changes:15
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.555555555556
 iteration #30:
-Number of changes:20
-Classification accuracy: 0.913742690058
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #31:
-Number of changes:28
-Classification accuracy: 0.899122807018
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #32:
-Number of changes:21
-Classification accuracy: 0.90350877193
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #33:
-Number of changes:17
-Classification accuracy: 0.907894736842
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #34:
-Number of changes:16
-Classification accuracy: 0.904970760234
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #35:
-Number of changes:23
-Classification accuracy: 0.90350877193
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #36:
-Number of changes:16
-Classification accuracy: 0.900584795322
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #37:
-Number of changes:18
-Classification accuracy: 0.900584795322
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #38:
-Number of changes:17
-Classification accuracy: 0.904970760234
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #39:
-Number of changes:21
-Classification accuracy: 0.90350877193
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #40:
-Number of changes:15
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #41:
-Number of changes:18
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #42:
-Number of changes:20
-Classification accuracy: 0.902046783626
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #43:
-Number of changes:16
-Classification accuracy: 0.899122807018
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #44:
-Number of changes:18
-Classification accuracy: 0.91081871345
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #45:
-Number of changes:15
-Classification accuracy: 0.909356725146
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #46:
-Number of changes:26
-Classification accuracy: 0.894736842105
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #47:
-Number of changes:18
-Classification accuracy: 0.897660818713
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #48:
-Number of changes:13
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #49:
-Number of changes:23
-Classification accuracy: 0.906432748538
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #50:
-Number of changes:15
-Classification accuracy: 0.899122807018
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #51:
-Number of changes:16
-Classification accuracy: 0.899122807018
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #52:
-Number of changes:19
-Classification accuracy: 0.900584795322
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #53:
-Number of changes:13
-Classification accuracy: 0.902046783626
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #54:
-Number of changes:21
-Classification accuracy: 0.897660818713
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #55:
-Number of changes:15
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #56:
-Number of changes:12
-Classification accuracy: 0.896198830409
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #57:
-Number of changes:16
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #58:
-Number of changes:16
-Classification accuracy: 0.899122807018
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #59:
-Number of changes:14
-Classification accuracy: 0.896198830409
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #60:
-Number of changes:20
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #61:
-Number of changes:15
-Classification accuracy: 0.894736842105
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #62:
-Number of changes:15
-Classification accuracy: 0.899122807018
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #63:
-Number of changes:18
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #64:
-Number of changes:24
-Classification accuracy: 0.913742690058
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #65:
-Number of changes:28
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #66:
-Number of changes:17
-Classification accuracy: 0.906432748538
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #67:
-Number of changes:19
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #68:
-Number of changes:22
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #69:
-Number of changes:22
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #70:
-Number of changes:14
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #71:
-Number of changes:18
-Classification accuracy: 0.902046783626
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #72:
-Number of changes:15
-Classification accuracy: 0.900584795322
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #73:
-Number of changes:14
-Classification accuracy: 0.897660818713
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #74:
-Number of changes:17
-Classification accuracy: 0.899122807018
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #75:
-Number of changes:17
-Classification accuracy: 0.897660818713
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #76:
-Number of changes:15
-Classification accuracy: 0.896198830409
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #77:
-Number of changes:15
-Classification accuracy: 0.906432748538
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #78:
-Number of changes:19
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #79:
-Number of changes:23
-Classification accuracy: 0.900584795322
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #80:
-Number of changes:19
-Classification accuracy: 0.890350877193
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #81:
-Number of changes:20
-Classification accuracy: 0.896198830409
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #82:
-Number of changes:17
-Classification accuracy: 0.894736842105
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #83:
-Number of changes:20
-Classification accuracy: 0.897660818713
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #84:
-Number of changes:22
-Classification accuracy: 0.894736842105
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #85:
-Number of changes:19
-Classification accuracy: 0.896198830409
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #86:
-Number of changes:17
-Classification accuracy: 0.897660818713
+Number of changes:0
+Classification accuracy: 0.611111111111
 iteration #87:
-Number of changes:24
-Classification accuracy: 0.90350877193
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #88:
-Number of changes:19
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #89:
-Number of changes:21
-Classification accuracy: 0.912280701754
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #90:
-Number of changes:22
-Classification accuracy: 0.891812865497
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #91:
-Number of changes:13
-Classification accuracy: 0.896198830409
+Number of changes:1
+Classification accuracy: 0.611111111111
 iteration #92:
-Number of changes:21
-Classification accuracy: 0.900584795322
+Number of changes:1
+Classification accuracy: 0.666666666667
 iteration #93:
-Number of changes:21
-Classification accuracy: 0.902046783626
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #94:
-Number of changes:10
-Classification accuracy: 0.904970760234
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #95:
-Number of changes:17
-Classification accuracy: 0.906432748538
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #96:
-Number of changes:14
-Classification accuracy: 0.906432748538
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #97:
-Number of changes:17
-Classification accuracy: 0.913742690058
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #98:
-Number of changes:17
-Classification accuracy: 0.90350877193
+Number of changes:0
+Classification accuracy: 0.666666666667
 iteration #99:
-Number of changes:9
-Classification accuracy: 0.907894736842
+Number of changes:1
+Classification accuracy: 0.611111111111
 Results - Labels of testing document:

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 #! /usr/bin/env python
 import sys
@@ -35,7 +34,7 @@ output_file = logger # or output_file = sys.stdout
 
 # Add words in vocabulary
 def add_in_dict(line):
-    doc = line[1:-1]
+    doc = line[1: len(line)]
     for word in doc:
         if word not in vocabulary:
             vocabulary[word] = [len(vocabulary), 0]
@@ -52,7 +51,7 @@ total count in this document
 @return the map for this document
 """
 def create_index(line):
-    doc = line[1:-1]
+    doc = line[1 : len(line)]
     docdict = dict()
     for word in doc:
         try:
@@ -80,9 +79,9 @@ def load_data(datafile):
     docnum = [0, 0]
     f = open(datafile, "r")
     for line in f:  # one document in each line
-        line = line.replace("\t", " ")
+        line = line.replace("\t", " ") # raplace \t
+        line = line.replace("\n", "") # remove \n
         line = line.split(" "); # tokenize the document
-        del line[-1] # delete the \n
         #print "Line[0]:" + line[0]
         """
         if line[0] == "project":
@@ -313,7 +312,7 @@ def main(argv):
                 
     print "Iteration done."
     output_file.write("Results - Labels of testing document:\n")
-    output_file.write(tuple(labels[trainN: N]))
+    output_file.write(str(labels[trainN: N]))
     #evaluate_cluster_result(labels, docset, N, docnum)
     evaluate_classification(labels, tdocset, N)
     output_file.close()
