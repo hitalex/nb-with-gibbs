@@ -61,8 +61,8 @@ def extract_token(line):
     docdict["_NUM_WORDS"] = word_count
     return (docdict, category)
     
-# build vocabulary and terms for each category using every doc
-def build_vocabulary_cterm(docdict, vocabulary, cterm):
+# build vocabulary
+def build_vocabulary(docdict, vocabulary):
     it = docdict.iteritems()
     try:
         while 1:
@@ -73,17 +73,33 @@ def build_vocabulary_cterm(docdict, vocabulary, cterm):
             if key not in vocabulary:
                 index = len(vocabulary)
                 vocabulary[key] = [index, 0]
-            if key not in cterm:
-                index = vocabulary[key][0]
-                cterm[key] = [index, 0]
+
             v = vocabulary[key]; v[1] = v[1] + value[1]
             index = v[0]
             vocabulary[key] = v
-            cv = cterm[key]; cv[1] = cv[1] + value[1];
-            cterm[key] = cv
             docdict[key] = [index, value[1]]
     except StopIteration:
         pass
+
+# build terms for each category using every doc    
+def build_cterm(docdict, vocabulary, cterm):
+    it = docdict.iteritems()
+    try:
+        while 1:
+            (key, value) = it.next()
+            # omit magic keys
+            if key in magic_key_set:
+                continue
+            if key not in cterm:
+                index = vocabulary[key][0]
+                cterm[key] = [index, 0]
+            cv = cterm[key]; cv[1] = cv[1] + value[1];
+            cterm[key] = cv
+    except StopIteration:
+        pass
+    except KeyError:
+        print "Word '" + key + "' not found in vocabulary!"
+        exit()
     # add total words for each category
     cterm["_NUM_WORDS"] = cterm["_NUM_WORDS"] + docdict["_NUM_WORDS"]
 
@@ -102,7 +118,8 @@ def train_multinomial_NB(train_file_path):
         if category == -1: # omit other categories
             continue
         Nc[category] = Nc[category] + 1
-        build_vocabulary_cterm(docdict, vocabulary, cterm_list[category])
+        build_vocabulary(docdict, vocabulary)
+        build_cterm(docdict, vocabulary, cterm_list[category])
         doclist.append(docdict)
         
     print "Vocabulary size: " + str(len(vocabulary))
